@@ -1,0 +1,17 @@
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+.vagrant
+node_modules
+npm-debug.log
+
+*.sublime*
+.chef
+.DS_Store
+
+*/main.css
