@@ -1,0 +1,36 @@
+{
+  "name": "tm-world-map-click",
+  "description": "",
+  "author": "Trademob <support@trademob.com>",
+  "version": "0.0.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrdevinmob/tm-world-map-clicks.git"
+  },
+  "contributors": [
+
+    {
+      "name": "Devin Hartman",
+      "email": "dha@trademob.com"
+    },
+    {
+      "name": "Fabien Garcia",
+      "email": "fg@trademob.com"
+    },
+    {
+      "name": "Burkhard Mudrick",
+      "email": "bm@trademob.com"
+    }
+  ],
+  "engines": {
+    "node": ">=0.8.18",
+    "npm": ">=1.2.2"
+  },
+  "dependencies": {
+    "express": "*",
+    "less": "*",
+    "coffee-script": "*",
+    "flour": "*"    
+  }
+}
