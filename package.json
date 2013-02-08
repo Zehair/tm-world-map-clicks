@@ -1,6 +1,6 @@
 {
-  "name": "tm-world-map-click",
-  "description": "",
+  "name": "tm-world-map-clicks",
+  "description": "SVG world map show ```real time``` clicks",
   "author": "Trademob <support@trademob.com>",
   "version": "0.0.1",
   "private": true,
@@ -9,7 +9,6 @@
     "url": "https://github.com/mrdevinmob/tm-world-map-clicks.git"
   },
   "contributors": [
-
     {
       "name": "Devin Hartman",
       "email": "dha@trademob.com"
@@ -31,6 +30,6 @@
     "express": "*",
     "less": "*",
     "coffee-script": "*",
-    "flour": "*"    
+      "flour": "*"
   }
 }
