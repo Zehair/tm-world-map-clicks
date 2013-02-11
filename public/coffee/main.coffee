@@ -1,76 +1,26 @@
-
-
 jQuery ->
-    content = $('#content')
-    worldMapSVG = null
-    windowTemp = null
-    worldMapHeight = null
-    worldMapWidth = null
-    lands = null
-    
-    setContentDimensions = ->
-        windowTemp = $(window)
-        content.css(
-            height: windowTemp.height()
-            width: windowTemp.width()
-        )
-    
-    scaleSvgToWindow = ->
-        windowTemp = $(window)
-        winHeight = windowTemp.height()
-        winWidth = windowTemp.width()
-        worldMapHeight = parseInt(  worldMapSVG.height() )
-        worldMapWidth = parseInt(  worldMapSVG.width() )
-        scale =   winHeight  / worldMapHeight
-        worldMapSVG.css(
-            height: winHeight * scale
-        )
-        console.log "scale", scale
-        
-    setContentDimensions()
 
-    $(window).resize ->
-        setContentDimensions()
-        scaleSvgToWindow()
-        
-    initWorldMap = (svg) ->
+    countries = ["fr","fx","gp","id","ye","mg","tw","mx","ae","bz","br","sl","it","bd","do","gw","se","tr","mz","jp","nz","cu","ve","pt","mr","ao","de","th","au","pg","hr","gl","g27049","dk","ir","mm","fi","sb","om","pa","ar","gb","gn","ie","ng","tn","tz","sa","vn","ru","ht","in","cn","ca","gq","az","my","ph","rs","me","ee","es","ga","kh","kr","hn","cl","nl","lk","gr","ec","no","lb","er","us","kz","lakes","aq","uz","nc","nc","fj","fj","kw","kw","tl","tl","bs","bs","g20657","vu","vu","fk","fk","gm","qa","jm","cy","pr","ps","ps","bn","bn","tt","tt","cv","cv","pf","pf","ws","ws","lu","km","km","mu","fo","fo","st","st","an","an","dm","to","to","ki","ki","fm","bh","ad","mp","pw","sc","ag","ag","bb","tc","tc","vc","lc","yt","vi","vi","gd","mt","mv","ky","kn","kn","ms","bl","nu","pm","ck","ck","wf","as","mh","aw","li","vg","vg","sh","je","ai","mf","gg","sm","bm","tv","nr","gi","pn","mc","va","im","gu","sg", "sd"]
+    countryCount = countries.length
 
-        worldMapSVG = $('#svg1926').svg()
-        timmer = setInterval(()->
-            showRandomPoint()
-        ,300)
-        lands = $('.land')
-        console.log 'lands', $( lands[randomFromInterval(0, lands.length)] ).svg()
-        scaleSvgToWindow()
+    randomLand = ()->
+        aLand = getRandomInt(0, countryCount)
+        countries[aLand]
 
-
-    $('#content').svg(
-        loadURL: '../img/BlankMap-World6-Equirectangular.svg'
-        onLoad: initWorldMap
-        settings: {}
-        initPath: '..img/'
-    )
-
-    randomFromInterval = (from, to) ->
-        Math.floor Math.random() * (to - from + 1) + from
-
-    showRandomPoint = ()->
-        xCord = randomFromInterval(10, worldMapWidth)
-        yCord = randomFromInterval(10, worldMapHeight)
-
-        thisCircle = worldMapSVG.svg('get').circle(lands[randomFromInterval(0, lands.length)], 10, 10, 10, {fill: 'red'}) 
-        setTimeout(()->
-            worldMapSVG.svg('get').remove(thisCircle)
-        ,500)
+    getRandomInt =(min, max)-> 
+        Math.floor(Math.random() * (max - min + 1)) + min;
 
     
-
-    # resetSize svg
-
+    flashLand = ()->
+        landClass = "." + randomLand() 
+        console.log 'landClass', landClass
+        Pablo( landClass ).addClass('selected')
+        timmer2 = setTimeout( ()->
+            Pablo( landClass ).removeClass('selected')
+        ,1000)
 
     
-    
-
-    
-    
-
+    setInterval(->
+        flashLand() 
+        console.log 'test'
+    ,50)
