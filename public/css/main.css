@@ -1,0 +1,49 @@
+/*Trademob Variables*/
+/*
+# Navbar
+Some property changes for the navbar from twitter boostrap.
+
+Added more padding to fit the higher navbar and add nice transition for hovering.
+*/
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: -3px 0 0 -4px;
+  overflow: hidden;
+}
+/*
+* Land
+*/
+path {
+  fill: #e8eaec;
+  fill-opacity: 1;
+}
+circle {
+  fill: #f49500;
+  fill-opacity: 1;
+}
